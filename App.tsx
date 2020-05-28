@@ -73,6 +73,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Animated.Code>
           {() => {
+            console.log("code in Animated.Code");
             return onChange(this.dragGestureState, [
               // 2: BEGIN, 4: ACTIVE, 5: END
               debug("gestureState:", this.dragGestureState),
