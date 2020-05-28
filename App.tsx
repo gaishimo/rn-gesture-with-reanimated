@@ -58,17 +58,6 @@ export default class App extends React.Component {
     super(props);
   }
 
-  // handleGestureEvent = event([
-  //   {
-  //     nativeEvent: ({ translationX, translationY, state }: any) =>
-  //       block([
-  //         set(this.dragPosition.x, translationX),
-  //         set(this.dragPosition.y, translationY),
-  //         set(this.dragGestureState, state),
-  //       ]),
-  //   },
-  // ]);
-
   handleGestureEvent = event([
     {
       nativeEvent: {
@@ -82,9 +71,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Animated.Code
-          key={`${this.state.position.x}-${this.state.position.y}`}
-        >
+        <Animated.Code>
           {() => {
             return onChange(this.dragGestureState, [
               // 2: BEGIN, 4: ACTIVE, 5: END
